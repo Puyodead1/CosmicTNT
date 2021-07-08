@@ -1,0 +1,59 @@
+GIGANTIC:
+  material: "TNT"
+  name: "&bGigantic TNT"
+  lore:
+    - "&b&oExplodes in a much larger radius."
+    - " "
+    - "&7Spawns 2 extra explosions at"
+    - "&7y+3 and y-3 of TNT, and another"
+    - "&72 explosions at either x+3 and z+3"
+    - "&7or x-3 and z-3."
+  attributes:
+    - EXPLODE;x+3;1 && EXPLODE;y-3;1
+    - EXPLODE;x+3;1 && EXPLODE;z+3;1 || EXPLODE;x-3;1 && EXPLODE;z-3;1
+
+MIMIC:
+  material: "TNT"
+  name: "&aMimic TNT"
+  lore:
+    - "&a&oRepeats the same explosion many times."
+    - " "
+    - "&7Spawns a TNT explosion at"
+    - "&7same location every 5s"
+    - "&7for 15s total, or 3 explosions."
+  attributes:
+    - REPEAT;5;3
+
+TACTICAL:
+  material: "TNT"
+  name: "&9Tactical TNT"
+  lore:
+    - "&9&oExplosion only affects mob spawners."
+    - " "
+    - "&7No blocks will be affected by"
+    - "&7this explosion except for"
+    - "&7Monster Spawners."
+  attributes:
+    - AFFECTS_ONLY;SPAWNER
+
+LUCKY:
+  material: "TNT"
+  name: "&eLucky TNT"
+  lore:
+    - "&e&oIncreases chances of spawner drops."
+    - " "
+    - "&7200% the normal chance of a"
+    - "&7spawner dropping from explosion."
+  attributes:
+    - INCREASE_SPAWNER_DROP;4.00
+
+LETHAL:
+  material: "TNT"
+  name: "&4Lethal TNT"
+  lore:
+    - "&4&oA more dense, dangerous explosion."
+    - " "
+    - "&7Creates 4x extra TNT explosions at"
+    - "&7same location as the original."
+  attributes:
+    - EXPLODE;LOC;4

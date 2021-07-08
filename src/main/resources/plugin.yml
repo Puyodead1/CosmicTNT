@@ -1,0 +1,6 @@
+name: CosmicTNT
+version: ${project.version}
+main: me.puyodead1.cosmictnt.cosmictnt.CosmicTNT
+api-version: 1.13
+depend: [ SilkSpawners ]
+authors: [ Puyodead1 ]
