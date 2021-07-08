@@ -1,5 +1,7 @@
 package me.puyodead1.cosmictnt.cosmictnt;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -12,14 +14,24 @@ import java.util.List;
 import java.util.UUID;
 
 public class CustomTNT {
+    @Getter
     public static HashMap<String, CustomTNT> CUSTOM_TNT = new HashMap<>();
+    @Getter
     public static HashMap<Location, CustomTNT> PLACED = new HashMap<>();
+    @Getter
     public static HashMap<UUID, CustomTNT> PRIMED = new HashMap<>();
 
+    @Getter
     private Material material;
+    @Getter
     private List<String> attributes;
+    @Getter
     private ItemStack itemStack;
+    @Getter
+    @Setter
     private Location location;
+    @Getter
+    @Setter
     private UUID uuid;
 
     public CustomTNT(final String identifier, final Material material, final String name, final List<String> lore, final List<String> attributes) {
@@ -33,34 +45,6 @@ public class CustomTNT {
         itemStack.setItemMeta(itemMeta);
 
         CUSTOM_TNT.put(identifier, this);
-    }
-
-    public Material getMaterial() {
-        return material;
-    }
-
-    public ItemStack getItemStack() {
-        return itemStack;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
-    public UUID getUUID() {
-        return uuid;
-    }
-
-    public void setUUID(UUID uuid) {
-        this.uuid = uuid;
-    }
-
-    public List<String> getAttributes() {
-        return attributes;
     }
 
     private List<String> colorizeList(final List<String> list) {

@@ -1,12 +1,9 @@
 package me.puyodead1.cosmictnt.cosmictnt;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
-import org.bukkit.block.data.type.Dispenser;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Player;
 import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -74,7 +71,7 @@ public class EventListener implements Listener {
         final CustomTNT tnt = CustomTNT.getPLACED().get(location);
 
         // set the entity uuid for tracking
-        tnt.setUUID(entity.getUniqueId());
+        tnt.setUuid(entity.getUniqueId());
         // remove tnt from placed list
         CustomTNT.getPLACED().remove(location);
         // add tnt to primed list

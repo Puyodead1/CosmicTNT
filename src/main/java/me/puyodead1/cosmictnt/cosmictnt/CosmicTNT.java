@@ -1,21 +1,29 @@
 package me.puyodead1.cosmictnt.cosmictnt;
 
 import co.aikar.commands.BukkitCommandManager;
+import de.dustplanet.util.SilkUtil;
+import lombok.Getter;
 import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class CosmicTNT extends JavaPlugin {
 
+    @Getter
     private CosmicTNT PLUGIN;
+    @Getter
     private BukkitCommandManager commandManager;
+    @Getter
+    private SilkUtil silkUtil;
 
     @Override
     public void onEnable() {
         PLUGIN = this;
         saveDefaultConfig();
 
-        commandManager = new BukkitCommandManager(this);
+        // Hook Silkspawners
+        silkUtil = SilkUtil.hookIntoSilkSpanwers();
 
+        commandManager = new BukkitCommandManager(this);
         commandManager.registerCommand(new CosmicTNTCommand());
 
         // Register events
@@ -35,9 +43,5 @@ public final class CosmicTNT extends JavaPlugin {
     @Override
     public void onDisable() {
         PLUGIN = null;
-    }
-
-    public BukkitCommandManager getCommandManager() {
-        return commandManager;
     }
 }
